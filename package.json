@@ -1,0 +1,21 @@
+{
+  "name": "train_tickets",
+  "version": "1.0.0",
+  "description": "Ukrainian train ticket API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
+    "elasticsearch": "^14.0.0",
+    "koa": "^2.4.1",
+    "koa-body": "^2.5.0",
+    "koa-router": "^7.3.0",
+    "koa2-validation": "^0.1.0",
+    "request": "^2.85.0"
+  }
+}

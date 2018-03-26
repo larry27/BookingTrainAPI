@@ -1,0 +1,1 @@
+{"snapshots":[{"name":"snapshot_1","uuid":"rFt8AzuLQc-SzM47iCMnmQ","state":1}],"indices":{".monitoring-es-6-2018.02.15":{"id":"1HLbbXUtTjeueg4-yW3HDg","snapshots":["rFt8AzuLQc-SzM47iCMnmQ"]},"train":{"id":"bIySnT8cRzSn9fsgqJ_GeQ","snapshots":["rFt8AzuLQc-SzM47iCMnmQ"]}}}

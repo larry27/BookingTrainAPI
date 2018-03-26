@@ -1,0 +1,43 @@
+version: '3.0'
+services:
+  elasticsearch-cities:
+    build:
+      context: ./docker
+      dockerfile: ElasticSearchDockerfile
+    container_name: elasticsearch-cities
+    environment:
+     - "discovery.type=single-node"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./elastic:/usr/share/elasticsearch/snapshot
+    ports:
+      - 9200:9200
+
+    networks:
+      - elastic-network
+
+  elasticsearch-mapping-init:
+    build:
+      context: ./docker
+      dockerfile: UbuntuDockerFile
+
+    depends_on:
+      - elasticsearch-cities
+    
+    networks:
+      - elastic-network
+
+    command: ["./index-import.sh", "elasticsearch-cities", "9200"]
+  
+  node:
+    build: .
+    networks:
+      - elastic-network
+    ports:
+      - 3000:3000
+
+networks:
+  elastic-network:
